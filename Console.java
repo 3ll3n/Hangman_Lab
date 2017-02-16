@@ -4,7 +4,7 @@ public class Console{
   Scanner sc;
   String data;
   User user;
-  String guess;
+  char letter;
   Game game;
 
   public void start(){
@@ -21,11 +21,9 @@ public class Console{
     game = new Game(user, data);
     System.out.println("Guess a letter");
     sc = new Scanner(System.in);
-    guess = sc.nextLine();
+    letter = sc.next().charAt(0);
     System.out.println(data);
-    System.out.println(guess); 
-  
-    System.out.println(game.checkLetterInWord(guess));
-
+    System.out.println(letter); 
+    game.checkLetterInWord(letter);
   }
 }
