@@ -16,7 +16,7 @@ public class Game{
     int position = 1;
     for (char c : word.toCharArray()) {
       if(c == letter){
-        System.out.println(position);
+        System.out.println("Letter found at position: " + position);
       }
       position++;
     }
