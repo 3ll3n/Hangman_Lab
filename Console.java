@@ -5,6 +5,7 @@ public class Console{
   String data;
   User user;
   String guess;
+  Game game;
 
   public void start(){
     System.out.println("Please enter the word: ");
@@ -17,10 +18,14 @@ public class Console{
     // sc.close();
 
     user = new User();
+    game = new Game(user, data);
     System.out.println("Guess a letter");
     sc = new Scanner(System.in);
     guess = sc.nextLine();
     System.out.println(data);
     System.out.println(guess); 
+  
+    System.out.println(game.checkLetterInWord(guess));
+
   }
 }
