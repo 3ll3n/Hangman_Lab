@@ -18,12 +18,17 @@ public class Console{
     // sc.close();
 
     user = new User();
-    game = new Game(user, data);
+    game = new Game(user, data); 
+
+    while (game.correctGuess.size() < data.length()){
     System.out.println("Guess a letter");
     sc = new Scanner(System.in);
     letter = sc.next().charAt(0);
-    System.out.println(data);
-    System.out.println(letter); 
-    game.checkLetterInWord(letter);
+    if(game.checkLetterInGuesses(letter)){
+      game.checkLetterInWord(letter);
+    }
+   
   }
+    System.out.println("The word is: " + data);
+}
 }
